@@ -1,0 +1,7 @@
+sm1 <- as.numeric(as.character(s$Sub_metering_1))
+sm2 <- as.numeric(as.character(s$Sub_metering_2))
+sm3 <- as.numeric(as.character(s$Sub_metering_3))
+plot(dt, sm1, type='l')
+plot(dt, sm2, type='l')
+plot(dt, sm3, type='l')
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
