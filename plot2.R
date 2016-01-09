@@ -1,0 +1,7 @@
+dates <- as.character(s$Date)
+times <- as.character(s$Time)
+datetimes <- paste(dates, times)
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')
+png(filename="plot2.png",width=480,height=480)
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power (kilowatts)')
+dev.off()
