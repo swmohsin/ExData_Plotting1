@@ -1,4 +1,4 @@
-power <- read.csv("household_temp.txt", sep=";")
+power <- read.csv("household_power_consumption.txt", sep=";")
 s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')
 gap <- as.numeric(as.character(s$Global_active_power))
 png(filename="plot1.png",width=480,height=480)
