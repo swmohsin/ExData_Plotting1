@@ -1,3 +1,7 @@
+power <- read.csv("household_power_consumption.txt", sep=";")
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')
+gap <- as.numeric(as.character(s$Global_active_power))
+
 dates <- as.character(s$Date)
 times <- as.character(s$Time)
 datetimes <- paste(dates, times)
