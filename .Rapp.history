@@ -1,0 +1,671 @@
+device.open()
+ls dev*
+box()
+plot(dt, gap, type='o')
+plot(dt, gap, type='n')
+plot(dt, gap, type='l')
+plot(dt, gap, type='l', xlab='Global Active Power')
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power (kilowatts)')
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+png(filename="plot2.png",width=480,height=480)#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power (kilowatts)')#
+dev.off()
+head(power)
+class(power@Sub_metering_1)
+class(power$Sub_metering_1)
+sm1 <- as.numeric(as.character(s$Sub_metering_1))
+sm2 <- as.numeric(as.character(s$Sub_metering_2))
+sm3 <- as.numeric(as.character(s$Sub_metering_3))
+sm1
+sm2
+head(power)
+head(power, 100)
+length(sm1)
+plot(dt, sm1, type='l')
+plot(dt, sm2, type='l')
+plot(dt, sm3, type='l')
+legend(400, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+png(filename="plot3.png",width=480,height=480)#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l')#
+plot(dt, sm3, type='l')#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+par(mfrow=c(2,2))#
+#
+x <- 1:10#
+y <- x * 2#
+#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)
+par(mfrow=c(2,2))#
+#
+x <- 1:10#
+y <- x * 2#
+#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)
+x
+y
+plot(x,y)
+hist(x)
+dev.off()
+plot(x,y)
+par(mfrow=c(2,2))
+plot(x,y)
+plot(x,y)
+plot(x,y)
+plot(x,y)
+plot(x,y)
+plot(x,y)
+plot(x,y)
+plot(x,y)
+dev.off()
+par(mfrow=c(2,2))#
+x <- 1:10#
+y <- x * 2#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)#
+plot(x,y)
+str(power)
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+grp = as.numeric(as.character(s$Global_reactive_power))#
+#
+plot(dt, grp, type='l', xlab='', ylab='Global_reactive_power')
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+gap <- as.numeric(as.character(s$Global_active_power))#
+par(mfrow=c(2,2))#
+png(filename="plot4.png",width=480,height=480)#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+#
+voltage = as.numeric(as.character(s$Voltage))#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+#
+plot(dt, grp, type='l', xlab='', ylab='Global_reactive_power', xlab="datetime")
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")#
+dev.off()
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+?layout
+plot(dt, sm1, type='l')z
+lines(dt, sm1)
+lines(dt, sm1)
+dev.new()
+lines(dt, sm1)
+lines(dt, sm1)
+dev.off()
+lines(dt, sm1)
+plot(x,y)
+dev.new()
+plot(x,y)
+lines(dt, sm1)
+points(dt, sm1)
+points(xt)
+points(sm1)
+layout(matrix())
+attach(mtcars)
+layout(matrix(c(1,1,2,3), 2, 2, byrow=TRUE))
+hist(wt)
+hist(mpg)
+hist(disp)
+plot(x,y)
+plot(x,y)
+hist(wt)
+hist(mpg)
+hist(wt)
+hist(wt)
+hist(wt)
+hist(mpg)
+hist(disp)
+layout(matrix(c(1, 2, 3, 3, 3, 4), 2, 2, byrow=TRUE))
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+?mfrow
+?mfrows
+?par
+par(bg="gray")
+plot(1:10)
+?layout
+layout
+?lcm
+layout(mat=matrix(c(1, 2, 3, 3, 3, 4), 2, 2, byrow=TRUE))
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l')#
+plot(dt, sm3, type='l')#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+par(mfrow=(1,1))
+layout(mat=matrix(c(1,1)))
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l')#
+plot(dt, sm3, type='l')#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+dev.off()
+dev.new()
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l')#
+plot(dt, sm3, type='l')#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+plot(dt, sm1, type='l')
+plot(dt, sm2, type='l', col="red")
+plot(dt, sm3, type='l', col="blue")
+plot(c(dt, dt, dt), c(sm1, sm2, s3))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l')
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l', col=c("black", "red", "blue"))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l', col=c("black", "red", "blue"))
+plot(dt, c(sm1, sm2, sm3), type='l', col=c("black", "red", "blue"))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l', col=c("red", "red", "blue"))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type=c('l', 'l', 'l'), col=c("red", "red", "blue"))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l', col=c("red", "red", "blue"))
+plot(c(dt, dt, dt), c(sm1, sm2, sm3), type='l', col=c("red", "red", "blue"), xlab='x lab', ylab='ylab')
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+x
+y
+points(x)
+lines(x)
+lines(x,y)
+plot(x,y)
+plot(c(x,y), c(y,x))
+plot(c(x,y), c(y,x), col=c("red", "blue"))
+plot(c(x,y), c(y,x), type='l', col=c("red", "blue"))
+plot(c(x,y), c(y,x), type=c('l', 'l'), col=c("red", "blue"))
+plot(c(x,y), c(y,x), type'l', col=c("red", "blue"))
+plot(c(x,y), c(y,x), type='l', col=c("red", "blue"))
+plot(c(x,y), c(y,x), type='n', col=c("red", "blue"))
+lines(x,y)
+plot(type='n')
+plot(dt, sm1, type='n')#
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+plot(x,y)
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+lines(x,y)
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+lines(x,y)
+lines(y,x)
+lines(x,-y)
+lines(-x,y)
+lines(-x,-y)
+plot.new()
+plot.off()
+dev.off()
+plot.new()
+layout(mat=matrix(c(1, 2, 3, 3, 3, 4), nrow=2, ncol=2)
+layout(mat=matrix(c(1, 2, 3, 3, 3, 4), nrow=2, ncol=2))
+layout(mat=matrix(c(1, 2, 3, 3, 3, 4), nrow=2, ncol=2))
+plot(x,y)
+dev.new()
+plot(x,y)
+plot(x,y)
+?par
+a1= rnorm(10)#
+a2= rnorm(10)#
+a3= rnorm(10)
+plot(a1)#
+points(a2, col=2)#
+points(a3, col=3)
+plot(a1)#
+points(a2, col=2)#
+lines(a3, col=3)
+lines(dt, sm1, col='black')#
+lines(dt, sm2, col="red")#
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+head(dt)
+head(sm1)
+head(sm2)
+head(sm3)
+sm1
+sm2
+sm3
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+plot(x,y)
+lines(dt, sm3, col="blue", ylab="Energy sub metering")
+plot(dt, sm3)
+plot(dt, sm3, type='l')
+plot(dt, sm3, type='o')
+plot(dt, sm3, type='a')
+plot(dt, sm3, type='b')
+plot(dt, sm3, type='c')
+plot(dt, sm3, type='d')
+plot(dt, sm3, type='e')
+plot(dt, sm3, type='f')
+plot(dt, sm3, type='g')
+plot(dt, sm3, type='h')
+plot(dt, sm3, type='i')
+plot(dt, sm3, type='j')
+plot(dt, sm3, type='k')
+plot(dt, sm3, type='l')
+plot(dt, sm3, type='m')
+plot(dt, sm3, type='n')
+plot(dt, sm3, type='o')
+plot(dt, sm3, type='p')
+plot(dt, sm3, type='q')
+plot(dt, sm3, type='r')
+plot(dt, sm3, type='s')
+plot(dt, sm3, type='t')
+plot(dt, sm3, type='r')
+plot(dt, sm3, type='t')
+plot(dt, sm3, type='s')
+plot(dt, sm3, type='s', col='red')
+plot(dt, sm2, type='s', col='black')
+lines(dt, sm2)
+lines(sm2)
+lines(sm1)
+lines(sm3)
+lines(sm4)
+lines(dt, sm3, type='l')
+plot(dt, sm1, col='black', type='l')#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')
+plot(dt, sm1, col='black', type='l')#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend(200, 10, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l')#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# output file name#
+#png(filename="plot4.png",width=480,height=480)#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l')#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+dev.new()
+par(mfrow=c(2,2))#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering")#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+summary(power)
+str(power)
+s$Sub_metering_1
+str(power)
+summary(power)
+summary(s)
+summary(s$Sub_metering_1)
+str(s$Sub_metering_1)
+max(s$Sub_metering_1)
+sm1 <- as.numeric(as.character(s$Sub_metering_1))
+summary(sm1)
+summary(sm2)
+summary(sm3)
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering")#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+gap <- as.numeric(as.character(s$Global_active_power))#
+png(filename="plot1.png",width=480,height=480)#
+hist(gap, col='red', main='Global Active Power', xlab='Global Active Power (kilowatts)')#
+dev.off()
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+gap <- as.numeric(as.character(s$Global_active_power))#
+#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+png(filename="plot2.png",width=480,height=480)#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power (kilowatts)')#
+dev.off()
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+png(filename="plot3.png",width=480,height=480)#
+plot(dt, sm1, type='l')#
+plot(dt, sm2, type='l', col="red")#
+plot(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+png(filename="plot3.png",width=480,height=480)#
+plot(dt, sm1, type='l')#
+lines(dt, sm2, type='l', col="red")#
+lines(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+plot(dt, sm1, type='l')#
+lines(dt, sm2, type='l', col="red")#
+lines(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+dev.off()
+dev.new()
+plot(dt, sm1, type='l')#
+lines(dt, sm2, type='l', col="red")#
+lines(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+plot(dt, sm1, type='l', ylim=c(-5,5))#
+lines(dt, sm2, type='l', col="red")#
+lines(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+plot(dt, sm1, type='l', ylim=c(0,35))#
+lines(dt, sm2, type='l', col="red")#
+lines(dt, sm3, type='l', col="blue")#
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))
+dev.off()
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering", ylim=c(0, 35))#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+dev.new()
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering", ylim=c(0, 35))#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering", ylim=c(0, 35))#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+#png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering", ylim=c(0, 35))#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+dev.off()
+dev.new()
+power <- read.csv("household_power_consumption.txt", sep=";")#
+s <- subset(power, power$Date == '2/1/2007' | power$Date == '2/2/2007')#
+dates <- as.character(s$Date)#
+times <- as.character(s$Time)#
+datetimes <- paste(dates, times)#
+dt <- strptime(datetimes,format='%m/%d/%Y %H:%M:%S')#
+voltage = as.numeric(as.character(s$Voltage))#
+gap <- as.numeric(as.character(s$Global_active_power))#
+sm1 <- as.numeric(as.character(s$Sub_metering_1))#
+sm2 <- as.numeric(as.character(s$Sub_metering_2))#
+sm3 <- as.numeric(as.character(s$Sub_metering_3))#
+grp = as.numeric(as.character(s$Global_reactive_power))#
+# global parameters to configure 4 plots#
+par(mfrow=c(2,2))#
+# output file name#
+#png(filename="plot4.png",width=480,height=480)#
+# top left plot#
+plot(dt, gap, type='l', xlab='', ylab='Global Active Power')#
+# top right plot#
+plot(dt, voltage, type='l', xlab='datetime', ylab='Voltage')#
+# bottom left plots#
+plot(dt, sm1, col='black', type='l', ylab="Energy sub metering", ylim=c(0, 35))#
+lines(dt, sm2, col="red", type='l')#
+lines(dt, sm3, col="blue", ylab="Energy sub metering", type='l')#
+legend("topright",c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(2.5, 2.5, 2.5), col=c("black", "red", "blue"))#
+# bottom right plot#
+plot(dt, grp, type='l', ylab='Global_reactive_power', xlab="datetime")
+swirl()
+package(swirl)
+library(swirl)
+packageVersion("swirl")
